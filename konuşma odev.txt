@@ -1,0 +1,187 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Csharpodev
+{
+    enum fonsiyonlar
+    {
+        sokak,
+        okul,
+        ev
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+        program:
+
+            Console.WriteLine("(1) ==> " + fonsiyonlar.sokak + " Stili Konuşma");
+            Console.WriteLine("(2) ==> " + fonsiyonlar.okul + " Stili Konuşma");
+            Console.WriteLine("(3) ==> " + fonsiyonlar.ev + " Stili Konuşma");
+            Console.WriteLine("-->|");
+            int secim = Convert.ToInt32(Console.ReadLine());
+            if (secim == 0)
+            {
+                sokakstyle sokak = new sokakstyle();
+                sokak.obir();
+                sokak.oiki();
+                sokak.ouc();
+                sokak.odort();
+                goto program;
+            }
+            if (secim == 1)
+            {
+                okulstyle okul = new okulstyle();
+                okul.hbir();
+                okul.hiki();
+                okul.huc();
+                okul.hdort();
+                goto program;
+            }
+            if (secim == 3)
+            {
+                evstyle dukkan = new evstyle();
+                dukkan.dbir();
+                dukkan.diki();
+                dukkan.duc();
+                dukkan.ddort();
+                goto program;
+            }
+            if (secim >= 4 && secim <= 0)
+            {
+                goto program;
+            }
+        }
+
+    }
+
+    public class sokakstyle
+    {
+
+        public void obir()
+        {
+            Console.WriteLine("saatiniz kaç");
+        }
+
+        public void oiki()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(0, 1);
+            if (sayi == 0)
+            {
+                Console.WriteLine("04.30");
+            }
+            if (sayi == 1)
+            {
+                Console.WriteLine("08.13");
+            }
+        }
+
+        public void ouc()
+        {
+            Console.WriteLine("peki bu gün günlerden ne");
+        }
+
+        public void odort()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(0, 1);
+            if (sayi == 0)
+            {
+                Console.WriteLine("perşembe");
+            }
+            if (sayi == 1)
+            {
+                Console.WriteLine("salı");
+            }
+        }
+    }
+
+    public class okulstyle
+    {
+
+        public void hbir()
+        {
+            Console.WriteLine("ilk ders ne");
+        }
+
+        public void hiki()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(0, 1);
+            if (sayi == 0)
+            {
+                Console.WriteLine("bu gün salı o yüzden matematik");
+            }
+            if (sayi == 1)
+            {
+                Console.WriteLine("bu gün cuma bu yüzden ingilizce");
+            }
+        }
+
+        public void huc()
+        {
+            Console.WriteLine("peki bu gün hangi ödevin kontolü vardı");
+        }
+
+        public void hdort()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(0, 1);
+            if (sayi == 0)
+            {
+                Console.WriteLine("kimya hocası bu gün kontrol edecek");
+            }
+            if (sayi == 1)
+            {
+                Console.WriteLine("bu gün galiba din ödevi var");
+            }
+        }
+    }
+
+    public class evstyle
+    {
+
+        public void dbir()
+        {
+            Console.WriteLine("Anne yemekte ne var?");
+        }
+
+        public void diki()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(0, 1);
+            if (sayi == 0)
+            {
+                Console.WriteLine("Bamya yaptım oğlum");
+            }
+            if (sayi == 1)
+            {
+                Console.WriteLine("Makarna pişirdim");
+            }
+        }
+
+        public void duc()
+        {
+            Console.WriteLine("Ne zaman yiyeceğiz");
+        }
+
+        public void ddort()
+        {
+            Random rastgele = new Random();
+            int sayi = rastgele.Next(0, 1);
+            if (sayi == 0)
+            {
+                Console.WriteLine("Akşam 08.30 da");
+            }
+            if (sayi == 1)
+            {
+                Console.WriteLine("Akşam 10.30 da");
+            }
+        }
+    }
+}
