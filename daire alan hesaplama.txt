@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AlanHesaplama
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+         baslangic:
+            double pi = 3.14;          
+            Console.WriteLine("Alan hesaplama uygulamasına hoşgeldiniz...");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            Console.WriteLine("Daire alanı hesaplamak için (1).");
+            Console.WriteLine("Daire çevresi hesaplamak için(2).");
+            Console.WriteLine("Kürenin hacmini hesaplamak için (3).");
+            Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            int secim = Convert.ToInt32(Console.ReadLine());
+            switch(secim)
+            {
+                case 1:
+                    Console.Clear();
+                    alan(pi);
+                    break;
+                case 2:
+                    Console.Clear();
+                    cevre(pi);
+                    break;
+                case 3:
+                    Console.Clear();
+                    hacim(pi);
+                    break;
+                default:
+                    Console.WriteLine("Geçersiz değer girdiniz devam etmek için enter a basınız");
+                    Console.ReadKey();
+                    Console.Clear();
+                    goto baslangic;
+                    
+
+            }
+        }
+
+        private static void hacim(double pi)
+        {
+            Console.WriteLine("Dairenin yarı çapının uzunluğunu giriniz:");
+            double r = Convert.ToInt32(Console.ReadLine());
+            double CHacim = (4/3) * pi * r * r * r;
+            Console.WriteLine("Cevap = "+CHacim);
+            Console.ReadKey();
+        }
+
+        private static void cevre(double pi)
+        {
+            Console.WriteLine("Dairenin yarı çapının uzunluğunu giriniz:");
+            double r = Convert.ToInt32(Console.ReadLine());
+            double CCevre = pi * r * 2;
+            Console.WriteLine("Cevap = " + CCevre);
+            Console.ReadKey();
+        }
+
+        private static void alan(double pi)
+        {
+            Console.WriteLine("Dairenin yarı çapının uzunluğunu giriniz:");
+            double r = Convert.ToInt32(Console.ReadLine());
+            double CAlan = pi * r * r;
+            Console.WriteLine("Cevap = " + CAlan);
+            Console.ReadKey();
+        }
+    }
+}
