@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace kalıtım
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            eylem elm = new eylem();
+            yemek ymk = new yemek();
+
+            elm.tur = "cips";
+            elm.gr = 23;
+            elm.kcal = 130;
+            elm.ye();
+            Console.ReadKey();
+
+        }
+    }
+
+    public class eylem : yemek
+    {
+        public void ye()
+        {
+            Console.WriteLine(tur + " turunde " + gr + " graminda " + kcal +" kalori yedin. yiğeceğin gram başına kalorisi: " + kcal/gr);
+        }
+    }
+
+    public class yemek
+    {
+        public int gr, kcal;
+        public string tur;
+    }
+}
