@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace cinema
+{
+    class Program
+    {
+        struct ticket
+        {
+            public double prc, time;
+            public string type, date, film;
+        }
+        struct personal
+        {
+            public string FName;
+        }
+        struct hall
+        {
+            public int salonNo, seatNo;
+        }
+        static void Main(string[] args)
+        {
+            int chs;
+            ticket tkt = new ticket();
+            personal prs = new personal();
+            hall hll = new hall();
+            Console.WriteLine("Welcome to smart ticket system"+"\nChoose a film: "+"\n1) fast and furious"+"\n2) Smurfs"+"\n3) Sonic");
+            chs = Convert.ToInt32(Console.ReadLine());
+            if(chs==1)
+            {
+                tkt.prc = 23.12;
+                hll.salonNo = 3;
+                tkt.film = "fast and furious";
+            }
+            else if(chs==2)
+            {
+                tkt.prc = 27.34;
+                hll.salonNo = 7;
+                tkt.film = "Smurfs";
+            }
+            else if(chs==3)
+            {
+                tkt.prc = 17.58;
+                hll.salonNo = 12;
+                tkt.film = "Sonic";
+            }
+            Console.WriteLine("Enter your full name and after that enter seat no");
+            prs.FName = Console.ReadLine();
+            hll.seatNo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("choose seat type comfort or normal");
+            string typchs = Console.ReadLine();
+            if(typchs=="comfort")
+            {
+                tkt.prc = tkt.prc + 10;
+            }
+            else
+            {
+                
+            }
+            Console.WriteLine("enter time you want to enter without enter dot");
+            tkt.time = Convert.ToInt32(Console.ReadLine());
+            tkt.date = "12/4/2023";
+            Console.Clear();
+            Console.WriteLine("FILM:" + tkt.film +"\nSalon No:"+hll.salonNo + "\nSeatNo:" + hll.seatNo + "\nFull Name" + prs.FName + "\nSeatType:" + tkt.type + "\nTime/Date:" + tkt.time + tkt.date);
+	    Console.ReadKey();
+        }
+
+        
+    }
+}
